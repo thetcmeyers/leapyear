@@ -9,9 +9,21 @@ def leapYear(x):
     else:
             return False
 
-year = int(input("Enter the year:"))
+go = True
+while go:
 
-if leapYear(year) == True:
-    print("This is a leap year!")
-else:
-    print("This isn't a leap year :(")
+    year = input("Enter the year:")
+
+    try:
+        val = int(year)
+        if leapYear(val) == True:
+            print("This is a leap year!")
+            go = False
+        else:
+            print("This isn't a leap year :(")
+            go = False
+        
+    except ValueError:
+       print("Please enter an Integer")
+    
+
